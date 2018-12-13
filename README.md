@@ -1,6 +1,8 @@
 # vid2xlsx
 _Convert videos into Excel spreadsheets_
 
+![Example Image](https://i.imgur.com/qAxcKb5.png)
+
 Usage: `vid2xlsx.py -i <path to video file> -o <path to xlsx destination> -f <frames> -c <colors> [-v] [-d]`
 
 Arguments accepted:

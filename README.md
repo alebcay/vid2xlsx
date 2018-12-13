@@ -3,7 +3,18 @@ _Convert videos into Excel spreadsheets_
 
 ![Example Image](https://i.imgur.com/qAxcKb5.png)
 
-Usage: `vid2xlsx.py -i <path to video file> -o <path to xlsx destination> -f <frames> -c <colors> [-v] [-d]`
+### Requirements
+- Python 3.6+
+- NumPy
+- [Loguru](https://github.com/Delgan/loguru)
+- imutils
+- OpenCV
+- xlsxwriter
+- scikit-learn
+
+### Usage
+
+`vid2xlsx.py -i <path to video file> -o <path to xlsx destination> -f <frames> -c <colors> [-v] [-d]`
 
 Arguments accepted:
 - `-i | --input`: Path to input video flie. Can be any format readable by OpenCV.

@@ -4,12 +4,7 @@ from imutils.video import FileVideoStream
 from loguru import logger
 from sklearn.cluster import MiniBatchKMeans
 
-import argparse
-import cv2
-import imutils
-import numpy as np
-import sys
-import xlsxwriter
+import argparse, cv2, imutils, numpy as np, sys, xlsxwriter
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required = True, help = "path to input video file")
@@ -32,10 +27,7 @@ count = 0
 
 workbook = xlsxwriter.Workbook(args["output"], {'constant_memory': True})
 
-palette = {}
-clt = None
-labels = None
-quant = None
+palette, clt, labels, quant = {}, None, None, None
 
 while cap.more():
 	frame = cap.read()
@@ -67,7 +59,7 @@ while cap.more():
 					palette[color] = workbook.add_format({'bg_color': f'#{color}'})
 				cell_format = palette[color]
 				current.write_blank(row, col, None, cell_format)
-	count = count + 1
+	count += 1
 
 if len(palette) > 64000: logger.warning("""
 	Palette size ({}) exceeds the maximum permitted under the XLSX specification (64000).
